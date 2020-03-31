@@ -10,10 +10,11 @@
 
 		<title>Dashboard Template for Bootstrap</title>
 		<!-- Bootstrap core CSS -->
-		<link href="/static/asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}" rel="stylesheet">
+		<link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}" rel="stylesheet">
+		<link th:href="@{/webjars/layui/2.5.6/css/layui.css}" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
-		<link href="/static/asserts/css/dashboard.css" rel="stylesheet">
+		<link href="asserts/css/dashboard.css" rel="stylesheet">
 		<style type="text/css">
 			/* Chart.js */
 			
@@ -76,13 +77,13 @@
 									<td th:text="${emp.email}"></td>
 									<!--条件运算-->
 									<td th:text="${emp.getGender()}==0?'女':'男'"></td>
-									如果获取到的是个对象，还可以继续.属性取值
+									<!--如果获取到的是个对象，还可以继续.属性取值-->
 									<td th:text="${emp.department.getDepartmentName()}"></td>
 									<td th:text="${#dates.format(emp.getBirth(),'yyyy-mm-dd HH:mm:ss')}"></td>
 									<td>
-										<button th:class="btn btn-sm btn-primary">编辑</button>
+										<button th:class="btn-primary" onclick="editList()">编辑</button>
 										&nbsp;
-										<button th:class="btn btn-sm btn-danger">删除</button>
+										<button th:class="layui-btn-danger" onclick="deleteList()">删除</button>
 									</td>
 								</tr>
 							</tbody>
@@ -135,6 +136,11 @@
 					}
 				}
 			});
+
+			//编辑按钮
+			function editList() {
+				alert('开始编辑！')
+            }
 		</script>
 
 	</body>
