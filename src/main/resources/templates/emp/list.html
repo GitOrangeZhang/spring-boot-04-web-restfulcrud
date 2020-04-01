@@ -40,6 +40,10 @@
 				-webkit-animation: chartjs-render-animation 0.001s;
 				animation: chartjs-render-animation 0.001s;
 			}
+            table{
+				vertical-align: middle;
+				text-align: center;
+			}
 		</style>
 	</head>
 
@@ -81,9 +85,9 @@
 									<td th:text="${emp.department.getDepartmentName()}"></td>
 									<td th:text="${#dates.format(emp.getBirth(),'yyyy-mm-dd HH:mm:ss')}"></td>
 									<td>
-										<button th:class="btn-primary" onclick="editList()">编辑</button>
+										<button class="layui-btn layui-btn-primary" onclick="editList()">编辑</button>
 										&nbsp;
-										<button th:class="layui-btn-danger" onclick="deleteList()">删除</button>
+										<button class="layui-btn layui-btn-danger" onclick="deleteList()">删除</button>
 									</td>
 								</tr>
 							</tbody>
@@ -96,18 +100,18 @@
 		<!-- Bootstrap core JavaScript
     ================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script type="text/javascript" src="/static/asserts/js/jquery-3.2.1.slim.min.js"></script>
-		<script type="text/javascript" src="/static/asserts/js/popper.min.js"></script>
-		<script type="text/javascript" src="/static/asserts/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js"></script>
+		<script type="text/javascript" src="asserts/js/popper.min.js"></script>
+		<script type="text/javascript" src="asserts/js/bootstrap.min.js"></script>
 
 		<!-- Icons -->
-		<script type="text/javascript" src="/static/asserts/js/feather.min.js"></script>
+		<script type="text/javascript" src="asserts/js/feather.min.js"></script>
 		<script>
 			feather.replace()
 		</script>
 
 		<!-- Graphs -->
-		<script type="text/javascript" src="/static/asserts/js/Chart.min.js"></script>
+		<script type="text/javascript" src="asserts/js/Chart.min.js"></script>
 		<script>
 			var ctx = document.getElementById("myChart");
 			var myChart = new Chart(ctx, {
@@ -132,7 +136,7 @@
 						}]
 					},
 					legend: {
-						display: false,
+						display: false
 					}
 				}
 			});
